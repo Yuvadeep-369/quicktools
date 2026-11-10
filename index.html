@@ -1,56 +1,308 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="QuickTools offers free, fast online tools for text, developers, and everyday tasks. No sign-up required." />
-  <meta name="robots" content="index,follow" />
+
+  <title>Free Online Tools – Word Counter, JSON Formatter & More | QuickTools</title>
+
+  <meta name="description" content="Use 12 free online tools from QuickTools, including a word counter, case converter, JSON formatter, password generator, Base64 converter and more. Fast, private and easy to use." />
+
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#101828" />
-  <title>QuickTools — Free Online Tools</title>
+
   <link rel="canonical" href="https://yuvadeep-369.github.io/quicktools/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="QuickTools – Free Online Tools" />
+  <meta property="og:description" content="Free online text tools, developer utilities and generators. No signup required." />
+  <meta property="og:url" content="https://yuvadeep-369.github.io/quicktools/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="QuickTools – Free Online Tools" />
+  <meta name="twitter:description" content="Free online tools for text, developers and everyday tasks." />
+
   <link rel="stylesheet" href="styles.css" />
   <script defer src="app.js"></script>
 </head>
+
 <body>
+
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="QuickTools home"><span class="brand-mark">Q</span> Quick<span>Tools</span></a>
-    <nav><a href="#tools">All tools</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <a class="brand" href="index.html" aria-label="QuickTools home">
+      <span class="brand-mark">Q</span> Quick<span>Tools</span>
+    </a>
+    <nav>
+      <a href="#tools">All tools</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
+
   <main>
+
     <section class="hero">
       <div class="eyebrow"><span class="dot"></span> SIMPLE. FAST. FREE.</div>
+
       <h1>Small tools.<br><span>Big time savings.</span></h1>
+
       <p>Useful online tools for everyday tasks. No downloads, no sign-up, no fuss.</p>
+
       <a class="primary-btn" href="#tools">Explore all tools <span>↓</span></a>
-      <div class="hero-note"><span>✓</span> Free to use <span>✓</span> Works in your browser <span>✓</span> Mobile friendly</div>
+
+      <div class="hero-note">
+        <span>✓</span> Free to use
+        <span>✓</span> Works in your browser
+        <span>✓</span> Mobile friendly
+      </div>
     </section>
 
-    <section class="ad-wrap" aria-label="Advertisement"><div class="ad-label">ADVERTISEMENT</div><div class="ad-placeholder">Ad space — add your Adsterra code here after approval</div></section>
+    <section class="ad-wrap" aria-label="Advertisement">
+      <div class="ad-label">ADVERTISEMENT</div>
+      <div class="ad-placeholder">Ad space — add your Adsterra code here after approval</div>
+    </section>
 
     <section id="tools" class="tools-section">
-      <div class="section-heading"><div><div class="eyebrow">THE TOOLBOX</div><h2>What do you need to do?</h2><p>Choose a tool and get it done in seconds.</p></div><div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Search tools..." aria-label="Search tools"></div></div>
-      <div class="category-row"><button class="category active" data-category="All">All tools</button><button class="category" data-category="Text">Text</button><button class="category" data-category="Developer">Developer</button><button class="category" data-category="Generator">Generators</button></div>
-      <div id="tool-grid" class="tool-grid">
-        <button class="tool-card" data-tool="word" data-category="Text"><span class="tool-icon purple">Aa</span><span class="tool-name">Word Counter</span><span class="tool-desc">Count words, characters and sentences.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="case" data-category="Text"><span class="tool-icon blue">Tt</span><span class="tool-name">Case Converter</span><span class="tool-desc">Switch text between popular letter cases.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="spaces" data-category="Text"><span class="tool-icon orange">≋</span><span class="tool-name">Remove Extra Spaces</span><span class="tool-desc">Clean up unwanted spaces and blank lines.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="slug" data-category="Text"><span class="tool-icon green">#</span><span class="tool-name">Slug Generator</span><span class="tool-desc">Create clean, URL-friendly slugs.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="reverse" data-category="Text"><span class="tool-icon pink">↔</span><span class="tool-name">Text Reverser</span><span class="tool-desc">Reverse text or the order of its words.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="sort" data-category="Text"><span class="tool-icon yellow">↕</span><span class="tool-name">Line Sorter</span><span class="tool-desc">Sort lines alphabetically and remove duplicates.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="json" data-category="Developer"><span class="tool-icon blue">{ }</span><span class="tool-name">JSON Formatter</span><span class="tool-desc">Format and validate JSON data.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="url" data-category="Developer"><span class="tool-icon purple">％</span><span class="tool-name">URL Encoder / Decoder</span><span class="tool-desc">Encode or decode URL text safely.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="base64" data-category="Developer"><span class="tool-icon green">64</span><span class="tool-name">Base64 Converter</span><span class="tool-desc">Encode or decode Base64 strings.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="password" data-category="Generator"><span class="tool-icon orange">✳</span><span class="tool-name">Password Generator</span><span class="tool-desc">Generate a random password in your browser.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="uuid" data-category="Generator"><span class="tool-icon pink">◇</span><span class="tool-name">UUID Generator</span><span class="tool-desc">Create random UUID v4 identifiers.</span><span class="tool-link">Open tool ↗</span></button>
-        <button class="tool-card" data-tool="lorem" data-category="Generator"><span class="tool-icon yellow">¶</span><span class="tool-name">Lorem Ipsum Generator</span><span class="tool-desc">Generate placeholder text for designs.</span><span class="tool-link">Open tool ↗</span></button>
+
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">THE TOOLBOX</div>
+          <h2>What do you need to do?</h2>
+          <p>Choose a tool and get it done in seconds.</p>
+        </div>
+
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="search" type="search" placeholder="Search tools..." aria-label="Search tools">
+        </div>
       </div>
-      <p id="no-results" class="no-results" hidden>No tools found. Try another search.</p>
+
+      <div class="category-row">
+        <button class="category active" data-category="All">All tools</button>
+        <button class="category" data-category="Text">Text</button>
+        <button class="category" data-category="Developer">Developer</button>
+        <button class="category" data-category="Generator">Generators</button>
+      </div>
+
+      <div id="tool-grid" class="tool-grid">
+
+        <button class="tool-card" data-tool="word" data-category="Text">
+          <span class="tool-icon purple">Aa</span>
+          <span class="tool-name">Word Counter</span>
+          <span class="tool-desc">Count words, characters and sentences.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="case" data-category="Text">
+          <span class="tool-icon blue">Tt</span>
+          <span class="tool-name">Case Converter</span>
+          <span class="tool-desc">Switch text between popular letter cases.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="spaces" data-category="Text">
+          <span class="tool-icon orange">≋</span>
+          <span class="tool-name">Remove Extra Spaces</span>
+          <span class="tool-desc">Clean up unwanted spaces and blank lines.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="slug" data-category="Text">
+          <span class="tool-icon green">#</span>
+          <span class="tool-name">Slug Generator</span>
+          <span class="tool-desc">Create clean, URL-friendly slugs.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="reverse" data-category="Text">
+          <span class="tool-icon pink">↔</span>
+          <span class="tool-name">Text Reverser</span>
+          <span class="tool-desc">Reverse text or the order of its words.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="sort" data-category="Text">
+          <span class="tool-icon yellow">↕</span>
+          <span class="tool-name">Line Sorter</span>
+          <span class="tool-desc">Sort lines alphabetically and remove duplicates.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="json" data-category="Developer">
+          <span class="tool-icon blue">{ }</span>
+          <span class="tool-name">JSON Formatter</span>
+          <span class="tool-desc">Format and validate JSON data.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="url" data-category="Developer">
+          <span class="tool-icon purple">％</span>
+          <span class="tool-name">URL Encoder / Decoder</span>
+          <span class="tool-desc">Encode or decode URL text safely.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="base64" data-category="Developer">
+          <span class="tool-icon green">64</span>
+          <span class="tool-name">Base64 Converter</span>
+          <span class="tool-desc">Encode or decode Base64 strings.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="password" data-category="Generator">
+          <span class="tool-icon orange">✳</span>
+          <span class="tool-name">Password Generator</span>
+          <span class="tool-desc">Generate a random password in your browser.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="uuid" data-category="Generator">
+          <span class="tool-icon pink">◇</span>
+          <span class="tool-name">UUID Generator</span>
+          <span class="tool-desc">Create random UUID v4 identifiers.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+        <button class="tool-card" data-tool="lorem" data-category="Generator">
+          <span class="tool-icon yellow">¶</span>
+          <span class="tool-name">Lorem Ipsum Generator</span>
+          <span class="tool-desc">Generate placeholder text for designs.</span>
+          <span class="tool-link">Open tool ↗</span>
+        </button>
+
+      </div>
+
+      <p id="no-results" class="no-results" hidden>
+        No tools found. Try another search.
+      </p>
+
     </section>
 
-    <section class="why-section"><div><div class="eyebrow">WHY QUICKTOOLS?</div><h2>Useful tools, without the friction.</h2></div><div class="why-grid"><article><span>⚡</span><h3>Fast by design</h3><p>Tools run directly in your browser, so results are ready quickly.</p></article><article><span>🔒</span><h3>Private by default</h3><p>Your text is processed in your browser and is not sent to our server by these tools.</p></article><article><span>📱</span><h3>Works everywhere</h3><p>A clean, responsive experience on desktop, tablet and mobile.</p></article></div></section>
-  </main>
-  <footer><a class="brand" href="index.html"><span class="brand-mark">Q</span> Quick<span>Tools</span></a><p>Simple tools for everyday work.</p><div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div><small>© <span id="year"></span> QuickTools. All rights reserved.</small></footer>
+    <!-- SEO CONTENT AND CRAWLABLE TOOL LINKS -->
 
-  <div id="tool-modal" class="modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close-btn" data-close aria-label="Close">×</button><div class="eyebrow">QUICKTOOLS WORKSPACE</div><h2 id="modal-title">Tool</h2><p id="modal-description" class="modal-description"></p><div id="tool-controls"></div><div class="modal-actions"><button id="run-tool" class="primary-btn">Generate result</button><button id="copy-result" class="secondary-btn" disabled>Copy result</button><button id="clear-tool" class="text-btn">Clear</button></div><div id="tool-status" class="tool-status" role="status"></div></section></div>
+    <section class="seo-tools-section">
+
+      <h2>Explore Our Free Online Tools</h2>
+
+      <p>
+        QuickTools provides free online utilities to help with writing,
+        text formatting, programming and everyday digital tasks.
+        Our browser-based tools are easy to use and require no account
+        or software installation.
+      </p>
+
+      <h3>Free Text Tools</h3>
+
+      <ul>
+        <li><a href="word.html">Free Word Counter</a> – Count words, characters and sentences.</li>
+        <li><a href="case.html">Case Converter</a> – Convert text to uppercase, lowercase and more.</li>
+        <li><a href="spaces.html">Remove Extra Spaces</a> – Clean unnecessary spaces and blank lines.</li>
+        <li><a href="slug.html">Slug Generator</a> – Create URL-friendly slugs.</li>
+        <li><a href="reverse.html">Text Reverser</a> – Reverse text and words.</li>
+        <li><a href="sort.html">Line Sorter</a> – Sort text lines alphabetically.</li>
+      </ul>
+
+      <h3>Free Developer Tools</h3>
+
+      <ul>
+        <li><a href="json.html">JSON Formatter</a> – Format and validate JSON data.</li>
+        <li><a href="url.html">URL Encoder and Decoder</a> – Encode and decode URL strings.</li>
+        <li><a href="base64.html">Base64 Converter</a> – Encode and decode Base64 text.</li>
+      </ul>
+
+      <h3>Free Online Generators</h3>
+
+      <ul>
+        <li><a href="password.html">Password Generator</a> – Generate random passwords.</li>
+        <li><a href="uuid.html">UUID Generator</a> – Generate UUID v4 identifiers.</li>
+        <li><a href="lorem.html">Lorem Ipsum Generator</a> – Create placeholder text.</li>
+      </ul>
+
+    </section>
+
+    <section class="why-section">
+
+      <div>
+        <div class="eyebrow">WHY QUICKTOOLS?</div>
+        <h2>Useful tools, without the friction.</h2>
+      </div>
+
+      <div class="why-grid">
+
+        <article>
+          <span>⚡</span>
+          <h3>Fast by design</h3>
+          <p>Tools run directly in your browser, so results are ready quickly.</p>
+        </article>
+
+        <article>
+          <span>🔒</span>
+          <h3>Private by default</h3>
+          <p>Your text is processed in your browser and is not sent to our server by these tools.</p>
+        </article>
+
+        <article>
+          <span>📱</span>
+          <h3>Works everywhere</h3>
+          <p>A clean, responsive experience on desktop, tablet and mobile.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <a class="brand" href="index.html">
+      <span class="brand-mark">Q</span> Quick<span>Tools</span>
+    </a>
+
+    <p>Simple tools for everyday work.</p>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+
+    <small>© <span id="year"></span> QuickTools. All rights reserved.</small>
+
+  </footer>
+
+  <!-- TOOL MODAL -->
+
+  <div id="tool-modal" class="modal" aria-hidden="true">
+
+    <div class="modal-backdrop" data-close></div>
+
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+      <button class="close-btn" data-close aria-label="Close">×</button>
+
+      <div class="eyebrow">QUICKTOOLS WORKSPACE</div>
+
+      <h2 id="modal-title">Tool</h2>
+
+      <p id="modal-description" class="modal-description"></p>
+
+      <div id="tool-controls"></div>
+
+      <div class="modal-actions">
+        <button id="run-tool" class="primary-btn">Generate result</button>
+        <button id="copy-result" class="secondary-btn" disabled>Copy result</button>
+        <button id="clear-tool" class="text-btn">Clear</button>
+      </div>
+
+      <div id="tool-status" class="tool-status" role="status"></div>
+
+    </section>
+
+  </div>
+
 </body>
 </html>

@@ -164,7 +164,9 @@ function securePassword(length, groups) {
     throw new Error('Password length must be at least the number of selected character sets.');
   }
 
-  const password = groups.map(group => group[secureRandomInt(group.length)]);
+  const password = groups.map(group =>
+    group[secureRandomInt(group.length)]
+  );
 
   for (let i = password.length; i < length; i++) {
     password.push(allCharacters[secureRandomInt(allCharacters.length)]);
@@ -202,8 +204,14 @@ function createUUID() {
 
 function reverseCharacters(text) {
   if (typeof Intl !== 'undefined' && Intl.Segmenter) {
-    const segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
-    return [...segmenter.segment(text)].map(item => item.segment).reverse().join('');
+    const segmenter = new Intl.Segmenter(undefined, {
+      granularity: 'grapheme'
+    });
+
+    return [...segmenter.segment(text)]
+      .map(item => item.segment)
+      .reverse()
+      .join('');
   }
 
   return Array.from(text).reverse().join('');
@@ -213,8 +221,13 @@ function countSentences(text) {
   if (!text.trim()) return 0;
 
   if (typeof Intl !== 'undefined' && Intl.Segmenter) {
-    const segmenter = new Intl.Segmenter(undefined, { granularity: 'sentence' });
-    return [...segmenter.segment(text)].filter(item => item.segment.trim()).length;
+    const segmenter = new Intl.Segmenter(undefined, {
+      granularity: 'sentence'
+    });
+
+    return [...segmenter.segment(text)]
+      .filter(item => item.segment.trim())
+      .length;
   }
 
   return (text.match(/[.!?]+(?=\s|$)/g) || []).length;
@@ -222,12 +235,15 @@ function countSentences(text) {
 
 function run() {
   try {
-    let input = $('#source')?.value || '';
+    const input = $('#source')?.value || '';
     let out = '';
 
     switch (activeTool) {
       case 'word': {
-        const words = input.trim() ? input.trim().split(/\s+/u).length : 0;
+        const words = input.trim()
+          ? input.trim().split(/\s+/u).length
+          : 0;
+
         const paragraphs = input.trim()
           ? input.trim().split(/\n\s*\n/).length
           : 0;
@@ -250,7 +266,10 @@ function run() {
             ? input.toLowerCase()
             : mode === 'title'
               ? input.toLowerCase().replace(/\b([a-z])/g, c => c.toUpperCase())
-              : input.toLowerCase().replace(/(^\s*|[.!?]\s+)([a-z])/g, (m, a, b) => a + b.toUpperCase());
+              : input.toLowerCase().replace(
+                  /(^\s*|[.!?]\s+)([a-z])/g,
+                  (m, a, b) => a + b.toUpperCase()
+                );
 
         break;
       }
@@ -260,9 +279,12 @@ function run() {
           .replace(/[ \t]+/g, ' ')
           .split('\n')
           .map(line => line.trim())
-          .filter((line, i, lines) => line !== '' || (i > 0 && lines[i - 1] !== ''))
+          .filter((line, i, lines) =>
+            line !== '' || (i > 0 && lines[i - 1] !== '')
+          )
           .join('\n')
           .trim();
+
         break;
       }
 
@@ -273,6 +295,7 @@ function run() {
           .trim()
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/^-+|-+$/g, '');
+
         break;
       }
 
@@ -280,6 +303,7 @@ function run() {
         out = $('#reverse-mode').value === 'words'
           ? input.trim().split(/\s+/).reverse().join(' ')
           : reverseCharacters(input);
+
         break;
       }
 
@@ -290,11 +314,11 @@ function run() {
           lines = [...new Set(lines)];
         }
 
-        lines.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+        lines.sort((a, b) =>
+          a.localeCompare(b, undefined, { sensitivity: 'base' })
+        );
 
-        if ($('#descending').checked) {
-          lines.reverse();
-        }
+        if ($('#descending').checked) lines.reverse();
 
         out = lines.join('\n');
         break;
@@ -302,7 +326,10 @@ function run() {
 
       case 'json': {
         const obj = JSON.parse(input);
-        const indent = $('#indent').value === 'tab' ? '\t' : Number($('#indent').value);
+        const indent = $('#indent').value === 'tab'
+          ? '\t'
+          : Number($('#indent').value);
+
         out = JSON.stringify(obj, null, indent);
         break;
       }
@@ -311,6 +338,7 @@ function run() {
         out = $('#direction').value === 'encode'
           ? encodeURIComponent(input)
           : decodeURIComponent(input);
+
         break;
       }
 
@@ -326,8 +354,14 @@ function run() {
           out = btoa(binary);
         } else {
           const binary = atob(input.trim());
-          const bytes = Uint8Array.from(binary, char => char.charCodeAt(0));
-          out = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+          const bytes = Uint8Array.from(
+            binary,
+            char => char.charCodeAt(0)
+          );
+
+          out = new TextDecoder('utf-8', {
+            fatal: true
+          }).decode(bytes);
         }
 
         break;
@@ -343,7 +377,8 @@ function run() {
 
         const lengthInput = Number($('#length').value);
 
-        if (!Number.isInteger(lengthInput) || lengthInput < 8 || lengthInput > 128) {
+        if (!Number.isInteger(lengthInput) ||
+            lengthInput < 8 || lengthInput > 128) {
           throw new Error('Choose a password length between 8 and 128.');
         }
 
@@ -390,6 +425,7 @@ function run() {
 
     if (copyBtn) copyBtn.disabled = !out;
     if (status) status.textContent = 'Done.';
+
   } catch (error) {
     result = '';
 
@@ -397,7 +433,9 @@ function run() {
     if (output) output.textContent = '';
 
     if (copyBtn) copyBtn.disabled = true;
-    if (status) status.textContent = 'Please check your input: ' + error.message;
+    if (status) {
+      status.textContent = 'Please check your input: ' + error.message;
+    }
   }
 }
 
@@ -410,7 +448,9 @@ copyBtn?.addEventListener('click', async () => {
     await navigator.clipboard.writeText(result);
     if (status) status.textContent = 'Copied to clipboard.';
   } catch {
-    if (status) status.textContent = 'Copy is unavailable in this browser. Select the result and copy it.';
+    if (status) {
+      status.textContent = 'Copy is unavailable in this browser. Select the result and copy it.';
+    }
   }
 });
 
@@ -456,44 +496,58 @@ $$('.tool-card, .open-tool-btn').forEach(card => {
   card.addEventListener('click', () => setup(card.dataset.tool));
 });
 
-// Homepage search and category filters
-const search = $('#search');
-const categoryButtons = $$('.category');
+// HOMEPAGE SEARCH AND CATEGORY FILTERS
 
-if (search && categoryButtons.length) {
-  let category = 'All';
+const search = document.getElementById('search');
+const categoryButtons = document.querySelectorAll('.category');
 
-  function filterTools() {
-    const query = search.value.toLowerCase();
-    let visible = 0;
+let selectedCategory = 'All';
 
-    $$('.tool-card').forEach(card => {
-      const matchesCategory =
-        category === 'All' || card.dataset.category === category;
+function filterTools() {
+  const query = search ? search.value.trim().toLowerCase() : '';
+  const cards = document.querySelectorAll('.tool-card');
 
-      const matchesSearch =
-        card.innerText.toLowerCase().includes(query);
+  let visible = 0;
 
-      const show = matchesCategory && matchesSearch;
+  cards.forEach(card => {
+    const name = card.querySelector('.tool-name')
+      ?.textContent.toLowerCase() || '';
 
-      card.hidden = !show;
+    const description = card.querySelector('.tool-desc')
+      ?.textContent.toLowerCase() || '';
 
-      if (show) visible++;
-    });
+    const matchesSearch =
+      name.includes(query) || description.includes(query);
 
-    const noResults = $('#no-results');
-    if (noResults) noResults.hidden = visible > 0;
-  }
+    const matchesCategory =
+      selectedCategory === 'All' ||
+      card.dataset.category === selectedCategory;
 
-  search.addEventListener('input', filterTools);
+    const show = matchesSearch && matchesCategory;
 
-  categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      categoryButtons.forEach(item => item.classList.remove('active'));
-      button.classList.add('active');
+    card.hidden = !show;
 
-      category = button.dataset.category;
-      filterTools();
-    });
+    if (show) visible++;
   });
+
+  const noResults = document.getElementById('no-results');
+
+  if (noResults) {
+    noResults.hidden = visible > 0;
+  }
 }
+
+if (search) {
+  search.addEventListener('input', filterTools);
+}
+
+categoryButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    categoryButtons.forEach(item => item.classList.remove('active'));
+
+    button.classList.add('active');
+    selectedCategory = button.dataset.category;
+
+    filterTools();
+  });
+});
